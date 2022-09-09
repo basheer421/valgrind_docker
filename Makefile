@@ -5,11 +5,11 @@ ifeq ($(UNAME), Linux)
 endif
 
 FILES = get_next_line.c get_next_line_utils.c main.c
-CLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 OUT = gnlTest
 
 all:
-	@cc $(CLAGS) $(FILES) -o $(OUT) && $(VALGRIND) ./$(OUT)
+	@cc $(CFLAGS) $(FILES) -o $(OUT) && $(VALGRIND) ./$(OUT)
 
 dockerb:
 	@docker build -qt val . > /dev/null
